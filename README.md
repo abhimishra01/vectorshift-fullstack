@@ -1,4 +1,4 @@
-### VectorShift Frontend Assignment
+### VectorShift FullStack Assignment
 
 #### Tech Stack
 
