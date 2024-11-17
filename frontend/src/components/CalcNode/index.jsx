@@ -45,7 +45,7 @@ const CalcNode = ({ id, data = {}, label }) => {
         <label>Calc:</label>
         <Select
           sx={commonInputStyle}
-          value={operation}
+          defaultValue={operation}
           onChange={handleOperationChange}
         >
           <Option value="add">Add</Option>

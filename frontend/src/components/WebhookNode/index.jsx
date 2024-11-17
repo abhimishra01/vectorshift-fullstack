@@ -25,7 +25,13 @@ const WebhookNode = ({ id, data = {} }) => {
   const handleUrlChange = (e) => setUrl(e.target.value);
 
   return (
-    <BaseNode id={id} data={data} label="Webhook" handles={handles}>
+    <BaseNode
+      id={id}
+      data={data}
+      label="Webhook"
+      handles={handles}
+      styles={{ height: "auto", width: "auto" }}
+    >
       <Box sx={columnFlexBoxStyle}>
         <Box sx={alignItemsCenterStyle}>
           <label>URL:</label>

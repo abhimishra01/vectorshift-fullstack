@@ -1,4 +1,4 @@
-### VectorShift FullStack Assignment
+### VectorShift Frontend Assignment
 
 #### Tech Stack
 
@@ -29,3 +29,10 @@ _Note:- Docker engine version used :- v20.10.22_
 ```
 ./scripts/stop-app.sh
 ```
+
+---
+
+#### Author :- Abhishek Mishra [Linkedin](https://www.linkedin.com/) | [Github](https://github.com/abhimishra01)
+
+- Contact (Call/Whatsapp): +916376068337
+- Email: abhisk.mhra@gmail.com
