@@ -7,7 +7,6 @@ import {
   alignItemsCenterStyle,
   columnFlexBoxStyle,
   commonInputStyle,
-  handleStyles,
 } from "@utils/constants";
 
 const SlackNode = ({ id, data = {} }) => {
@@ -19,7 +18,6 @@ const SlackNode = ({ id, data = {} }) => {
       type: "target",
       position: Position.Left,
       id: "trigger",
-      style: handleStyles,
     },
   ];
 

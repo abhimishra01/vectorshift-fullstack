@@ -1,7 +1,7 @@
 // BaseNode.js
 import { Box, Typography } from "@mui/joy";
 
-import { commonBoxShadow } from "@utils/constants";
+import { commonBoxShadow, handleStyles } from "@utils/constants";
 import { Handle } from "reactflow";
 
 const BaseNode = ({ id, data, label, handles, children, styles }) => {
@@ -17,7 +17,8 @@ const BaseNode = ({ id, data, label, handles, children, styles }) => {
         boxShadow: commonBoxShadow,
         transition: "all 0.3s ease",
         "&:hover": {
-          backgroundColor: "black",
+          borderColor: "#6A5ACD",
+          boxShadow: "0 8px 16px rgba(106, 90, 205, 0.4)",
         },
         ...styles,
       }}
@@ -43,7 +44,7 @@ const BaseNode = ({ id, data, label, handles, children, styles }) => {
           type={handle.type}
           position={handle.position}
           id={`${id}-${handle.id}`}
-          style={{ ...handle.style }}
+          style={{ ...handle.style, ...handleStyles }}
         />
       ))}
     </Box>
