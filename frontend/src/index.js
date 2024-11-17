@@ -1,6 +1,6 @@
 // Structure of imports used across the app
 // 1st 3rd party library imports
-// 2nd absolute imports
+// 2nd aliases imports
 // 3rd relative imports
 
 import React from "react";

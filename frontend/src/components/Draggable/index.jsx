@@ -1,6 +1,7 @@
 // Draggable
 
 import { Box, Typography } from "@mui/joy";
+
 import { commonBoxShadow } from "@utils/constants";
 
 const Draggable = ({ type, label }) => {

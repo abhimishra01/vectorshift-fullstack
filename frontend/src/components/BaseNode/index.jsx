@@ -1,8 +1,8 @@
 // BaseNode.js
+import { Handle } from "reactflow";
 import { Box, Typography } from "@mui/joy";
 
 import { commonBoxShadow, handleStyles } from "@utils/constants";
-import { Handle } from "reactflow";
 
 const BaseNode = ({ id, data, label, handles, children, styles }) => {
   return (
