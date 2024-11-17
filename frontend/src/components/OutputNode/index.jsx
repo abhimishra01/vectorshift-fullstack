@@ -6,7 +6,6 @@ import { BaseNode } from "@components/nodes";
 import {
   columnFlexBoxStyle,
   commonInputStyle,
-  handleStyles,
   inputBoxStyle,
   selectStyle,
 } from "@utils/constants";
@@ -17,7 +16,6 @@ const OutputNode = ({ id, data = {} }) => {
       type: "target",
       position: Position.Left,
       id: "output",
-      style: handleStyles,
     },
   ];
 

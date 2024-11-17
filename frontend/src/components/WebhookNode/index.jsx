@@ -7,7 +7,6 @@ import {
   alignItemsCenterStyle,
   columnFlexBoxStyle,
   commonInputStyle,
-  handleStyles,
 } from "@utils/constants";
 
 const WebhookNode = ({ id, data = {} }) => {
@@ -18,7 +17,6 @@ const WebhookNode = ({ id, data = {} }) => {
       type: "target",
       position: Position.Left,
       id: "trigger",
-      style: handleStyles,
     },
   ];
 

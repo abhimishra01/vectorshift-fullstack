@@ -7,7 +7,6 @@ import {
   alignItemsCenterStyle,
   columnFlexBoxStyle,
   commonInputStyle,
-  handleStyles,
 } from "@utils/constants";
 
 const TeamsNode = ({ id, data = {} }) => {
@@ -19,7 +18,6 @@ const TeamsNode = ({ id, data = {} }) => {
       type: "target",
       position: Position.Left,
       id: "trigger",
-      style: handleStyles,
     },
   ];
 

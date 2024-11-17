@@ -7,7 +7,6 @@ import {
   alignItemsCenterStyle,
   columnFlexBoxStyle,
   commonInputStyle,
-  handleStyles,
 } from "@utils/constants";
 
 const GmailNode = ({ id, data = {} }) => {
@@ -21,7 +20,6 @@ const GmailNode = ({ id, data = {} }) => {
       type: "target",
       position: Position.Left,
       id: "trigger",
-      style: handleStyles,
     },
   ];
 

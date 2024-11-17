@@ -3,11 +3,7 @@ import { Position } from "reactflow";
 import { Box, Option, Select } from "@mui/joy";
 
 import { BaseNode } from "@components/nodes";
-import {
-  alignItemsCenterStyle,
-  commonInputStyle,
-  handleStyles,
-} from "@utils/constants";
+import { alignItemsCenterStyle, commonInputStyle } from "@utils/constants";
 
 const CalcNode = ({ id, data = {}, label }) => {
   const [operation, setOperation] = useState(data.operation || "add");
@@ -16,19 +12,17 @@ const CalcNode = ({ id, data = {}, label }) => {
       type: "target",
       position: Position.Left,
       id: "input1",
-      style: handleStyles,
     },
     {
       type: "target",
       position: Position.Left,
       id: "input2",
-      style: { top: "70%", ...handleStyles },
+      style: { top: "70%" },
     },
     {
       type: "source",
       position: Position.Right,
       id: "output",
-      style: handleStyles,
     },
   ];
 

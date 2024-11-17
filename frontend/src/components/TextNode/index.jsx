@@ -4,7 +4,6 @@ import { Position } from "reactflow";
 import { Box, Textarea } from "@mui/joy";
 
 import { BaseNode } from "@components/nodes";
-import { handleStyles } from "@utils/constants";
 
 const TextNode = ({ id, data }) => {
   const [currText, setCurrText] = useState(data?.text || "{{input}}");
@@ -26,7 +25,6 @@ const TextNode = ({ id, data }) => {
       id: variable,
       style: {
         top: `${((index + 1) * 100) / (variables.length + 1)}%`,
-        ...handleStyles,
       },
     }));
 
@@ -47,7 +45,7 @@ const TextNode = ({ id, data }) => {
       type: "source",
       position: Position.Right,
       id: "output",
-      style: { top: "50%", ...handleStyles },
+      style: { top: "50%" },
     },
   ];
 
