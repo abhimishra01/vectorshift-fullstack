@@ -1,13 +1,15 @@
+import { Box } from "@mui/joy";
+
 import PipelineUI from "@features/UI";
 import { PipelineToolbar, SubmitButton } from "@components";
 
 function App() {
   return (
-    <div>
+    <Box>
       <PipelineToolbar />
       <PipelineUI />
       <SubmitButton />
-    </div>
+    </Box>
   );
 }
 

@@ -6,6 +6,7 @@ import { Box, Button } from "@mui/joy";
 
 import { useStore } from "@store";
 import { generatePipelinePayload } from "@utils";
+import { commonBoxShadow } from "@utils/constants";
 
 const SubmitButton = () => {
   const selector = (state) => ({
@@ -55,6 +56,12 @@ const SubmitButton = () => {
       <Button
         sx={{
           backgroundColor: "#5045E5",
+          boxShadow: commonBoxShadow,
+          transition: "all 0.3s ease",
+          "&:hover": {
+            borderColor: "#6A5ACD",
+            boxShadow: "0 2px 13px rgba(106, 90, 205, 0.4)",
+          },
         }}
         onClick={handleSubmit}
         disabled={isLoading}

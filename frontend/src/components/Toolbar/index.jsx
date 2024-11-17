@@ -1,19 +1,47 @@
 // toolbar.js
 
-import { Box } from "@mui/joy";
+import { Box, Avatar } from "@mui/joy";
 
-import { nodeTypes } from "@utils/constants";
+import { commonBoxShadow, nodeTypes } from "@utils/constants";
 import { Draggable } from "@components";
+import logo from "@assets/logo.png";
 
 const PipelineToolbar = () => {
   return (
-    <Box style={{ padding: "10px" }}>
+    <Box
+      sx={{
+        marginTop: "20px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "10px",
+        boxShadow: commonBoxShadow,
+      }}
+    >
+      <Avatar
+        alt="V"
+        src={logo}
+        size="sm"
+        sx={{
+          boxShadow: commonBoxShadow,
+          transition: "all 0.3s ease",
+          marginLeft: "10px",
+          borderRadius: "",
+          "&:hover": {
+            borderColor: "#6A5ACD",
+            boxShadow: "0 2px 13px rgba(106, 90, 205, 0.4)",
+          },
+        }}
+      />
+
       <Box
         sx={{
-          marginTop: "20px",
           display: "flex",
           flexWrap: "wrap",
           gap: "10px",
+          width: "100%",
+          alignItems: "center",
+          justifyContent: "space-evenly",
         }}
       >
         {nodeTypes.map((nodeType, id) => (

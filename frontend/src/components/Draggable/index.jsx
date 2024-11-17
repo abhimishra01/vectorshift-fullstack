@@ -1,5 +1,8 @@
 // Draggable
 
+import { Box, Typography } from "@mui/joy";
+import { commonBoxShadow } from "@utils/constants";
+
 const Draggable = ({ type, label }) => {
   const onDragStart = (event, nodeType) => {
     const appData = { nodeType };
@@ -12,11 +15,11 @@ const Draggable = ({ type, label }) => {
   };
 
   return (
-    <div
+    <Box
       className={type}
       onDragStart={(event) => onDragStart(event, type)}
       onDragEnd={(event) => (event.target.style.cursor = "grab")}
-      style={{
+      sx={{
         cursor: "grab",
         minWidth: "80px",
         height: "60px",
@@ -26,11 +29,19 @@ const Draggable = ({ type, label }) => {
         backgroundColor: "#1C2536",
         justifyContent: "center",
         flexDirection: "column",
+        boxShadow: commonBoxShadow,
       }}
       draggable
     >
-      <span style={{ color: "#fff" }}>{label}</span>
-    </div>
+      <Typography
+        sx={{
+          fontSize: "0.9rem",
+          color: "#fff",
+        }}
+      >
+        {label}
+      </Typography>
+    </Box>
   );
 };
 
