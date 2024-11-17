@@ -39,6 +39,7 @@ async def parse_pipeline(request: Request):
         "num_edges": len_edges,
         "is_dag": is_dag(nodes, edges),
     }
+
 # Sample Payload :
 #  {
 #     "nodes": [{"id": "A"}, {"id": "B"}, {"id": "C"}, {"id": "D"}],
@@ -48,3 +49,10 @@ async def parse_pipeline(request: Request):
 #       {"source": "C", "target": "D"}   
 #     ]
 #  }
+
+# Sample response :
+# {
+#     "num_nodes": 4,
+#     "num_edges": 3,
+#     "is_dag": true
+# }
