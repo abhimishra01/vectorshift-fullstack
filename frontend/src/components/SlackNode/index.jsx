@@ -7,10 +7,7 @@ const SlackNode = ({ id, data = {} }) => {
   const [channel, setChannel] = useState(data.channel || "");
   const [message, setMessage] = useState(data.message || "");
 
-  const handles = [
-    { type: "target", position: Position.Left, id: "trigger" },
-    { type: "source", position: Position.Right, id: "status" },
-  ];
+  const handles = [{ type: "target", position: Position.Left, id: "trigger" }];
 
   const handleMessageChange = (e) => setMessage(e.target.value);
   const handleChannelChange = (e) => setChannel(e.target.value);

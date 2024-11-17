@@ -9,10 +9,7 @@ const GmailNode = ({ id, data = {} }) => {
     data.recipient || "customers@vectorshift.ai"
   );
 
-  const handles = [
-    { type: "target", position: Position.Left, id: "trigger" },
-    { type: "source", position: Position.Right, id: "status" },
-  ];
+  const handles = [{ type: "target", position: Position.Left, id: "trigger" }];
 
   const handleRecipientChange = (e) => setRecipient(e.target.value);
   const handleSubjectChange = (e) => setSubject(e.target.value);

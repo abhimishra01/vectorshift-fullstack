@@ -38,7 +38,9 @@ const SubmitButton = () => {
   useEffect(() => {
     if (pipelineData === null) return;
     alert(
-      `No. of Nodes: ${pipelineData.num_nodes}\nNo. of Edges: ${pipelineData.num_edges}\n`
+      `No. of Nodes: ${pipelineData.num_nodes}\nNo. of Edges: ${
+        pipelineData.num_edges
+      }\nIs DAG: ${pipelineData.is_dag ? "Yes" : "No"}`
     );
   }, [pipelineData]);
 

@@ -7,10 +7,7 @@ const TeamsNode = ({ id, data = {} }) => {
   const [teamId, setTeamId] = useState(data.teamId || "");
   const [message, setMessage] = useState(data.message || "");
 
-  const handles = [
-    { type: "target", position: Position.Left, id: "trigger" },
-    { type: "source", position: Position.Right, id: "status" },
-  ];
+  const handles = [{ type: "target", position: Position.Left, id: "trigger" }];
 
   const handleTeamIdChange = (e) => setTeamId(e.target.value);
   const handleMessageChange = (e) => setMessage(e.target.value);

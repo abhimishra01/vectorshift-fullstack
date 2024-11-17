@@ -19,7 +19,7 @@ const TextNode = ({ id, data }) => {
     const variables = extractVariables(currText);
 
     const newHandles = variables.map((variable, index) => ({
-      type: "target",
+      type: "source",
       position: Position.Left,
       id: variable,
       style: {
