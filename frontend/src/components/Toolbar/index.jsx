@@ -1,13 +1,15 @@
 // toolbar.js
 
+import { Box } from "@mui/joy";
+
 import { nodeTypes } from "@utils/constants";
 import { Draggable } from "@components";
 
 const PipelineToolbar = () => {
   return (
-    <div style={{ padding: "10px" }}>
-      <div
-        style={{
+    <Box style={{ padding: "10px" }}>
+      <Box
+        sx={{
           marginTop: "20px",
           display: "flex",
           flexWrap: "wrap",
@@ -17,8 +19,8 @@ const PipelineToolbar = () => {
         {nodeTypes.map((nodeType, id) => (
           <Draggable key={id} type={nodeType.type} label={nodeType.label} />
         ))}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

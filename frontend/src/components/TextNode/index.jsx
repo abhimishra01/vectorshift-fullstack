@@ -1,8 +1,10 @@
 // TextNode.js
 import { useState, useEffect } from "react";
 import { Position } from "reactflow";
+import { Box, Textarea } from "@mui/joy";
 
 import { BaseNode } from "@components/nodes";
+import { handleStyles } from "@utils/constants";
 
 const TextNode = ({ id, data }) => {
   const [currText, setCurrText] = useState(data?.text || "{{input}}");
@@ -19,12 +21,12 @@ const TextNode = ({ id, data }) => {
     const variables = extractVariables(currText);
 
     const newHandles = variables.map((variable, index) => ({
-      type: "source",
+      type: "target",
       position: Position.Left,
       id: variable,
       style: {
         top: `${((index + 1) * 100) / (variables.length + 1)}%`,
-        background: "#555",
+        ...handleStyles,
       },
     }));
 
@@ -45,7 +47,7 @@ const TextNode = ({ id, data }) => {
       type: "source",
       position: Position.Right,
       id: "output",
-      style: { top: "50%" },
+      style: { top: "50%", ...handleStyles },
     },
   ];
 
@@ -60,16 +62,16 @@ const TextNode = ({ id, data }) => {
       label="Text"
       handles={allHandles}
       styles={{
-        width: nodeSize.width,
-        height: nodeSize.height,
+        height: "auto",
+        width: "auto",
         transition: "all 0.3s ease",
       }}
     >
-      <div style={{ padding: "8px" }}>
-        <textarea
+      <Box sx={{ padding: "8px" }}>
+        <Textarea
           value={currText}
           onChange={handleTextChange}
-          style={{
+          sx={{
             width: "90%",
             height: `${nodeSize.height - 50}px`,
             resize: "none",
@@ -78,7 +80,7 @@ const TextNode = ({ id, data }) => {
             padding: "4px",
           }}
         />
-      </div>
+      </Box>
     </BaseNode>
   );
 };

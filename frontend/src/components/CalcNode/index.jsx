@@ -1,36 +1,59 @@
 import { useState } from "react";
 import { Position } from "reactflow";
+import { Box, Option, Select } from "@mui/joy";
 
 import { BaseNode } from "@components/nodes";
+import {
+  alignItemsCenterStyle,
+  commonInputStyle,
+  handleStyles,
+} from "@utils/constants";
 
 const CalcNode = ({ id, data = {}, label }) => {
   const [operation, setOperation] = useState(data.operation || "add");
   const handles = [
-    { type: "target", position: Position.Left, id: "input1" },
+    {
+      type: "target",
+      position: Position.Left,
+      id: "input1",
+      style: handleStyles,
+    },
     {
       type: "target",
       position: Position.Left,
       id: "input2",
-      style: { top: "70%" },
+      style: { top: "70%", ...handleStyles },
     },
-    { type: "source", position: Position.Right, id: "output" },
+    {
+      type: "source",
+      position: Position.Right,
+      id: "output",
+      style: handleStyles,
+    },
   ];
 
   const handleOperationChange = (e) => setOperation(e.target.value);
 
   return (
     <BaseNode id={id} data={data} label="Calc" handles={handles}>
-      <div>
-        <label>
-          Calc:
-          <select value={operation} onChange={handleOperationChange}>
-            <option value="add">Add</option>
-            <option value="subtract">Subtract</option>
-            <option value="multiply">Multiply</option>
-            <option value="divide">Divide</option>
-          </select>
-        </label>
-      </div>
+      <Box
+        sx={{
+          ...alignItemsCenterStyle,
+          justifyContent: "flex-start",
+        }}
+      >
+        <label>Calc:</label>
+        <Select
+          sx={commonInputStyle}
+          value={operation}
+          onChange={handleOperationChange}
+        >
+          <Option value="add">Add</Option>
+          <Option value="subtract">Subtract</Option>
+          <Option value="multiply">Multiply</Option>
+          <Option value="divide">Divide</Option>
+        </Select>
+      </Box>
     </BaseNode>
   );
 };

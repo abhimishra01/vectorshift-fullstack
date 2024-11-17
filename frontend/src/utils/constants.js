@@ -41,3 +41,38 @@ export const nodeTypes = [
     label: "Webhook",
   },
 ];
+
+export const handleStyles = {
+  background: "#fafafa",
+  height: "10px",
+  width: "10px",
+  border: "1px solid #5A00ED",
+  borderRadius: "50%",
+};
+
+export const inputBoxStyle = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-start",
+};
+
+export const alignItemsCenterStyle = {
+  display: "flex",
+  alignItems: "center",
+};
+
+export const selectStyle = {
+  display: "flex",
+  justifyContent: "flex-start",
+  alignItems: "center",
+};
+
+export const columnFlexBoxStyle = {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+};
+
+export const commonInputStyle = {
+  marginLeft: "0.5rem",
+};

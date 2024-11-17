@@ -1,7 +1,15 @@
 import { useState } from "react";
 import { Position } from "reactflow";
+import { Box, Input, Option, Select } from "@mui/joy";
 
 import { BaseNode } from "@components/nodes";
+import {
+  columnFlexBoxStyle,
+  commonInputStyle,
+  handleStyles,
+  inputBoxStyle,
+  selectStyle,
+} from "@utils/constants";
 
 const OutputNode = ({ id, data = {} }) => {
   const handles = [
@@ -9,6 +17,7 @@ const OutputNode = ({ id, data = {} }) => {
       type: "target",
       position: Position.Left,
       id: "output",
+      style: handleStyles,
     },
   ];
 
@@ -34,24 +43,35 @@ const OutputNode = ({ id, data = {} }) => {
   };
 
   return (
-    <BaseNode id={id} data={data} label="Output" handles={handles}>
-      <div>
-        <div>
-          <label>
-            Output:
-            <output type="text" value={currName} onChange={handleNameChange} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Type:
-            <select value={outputType} onChange={handleTypeChange}>
-              <option value="Text">Text</option>
-              <option value="File">File</option>
-            </select>
-          </label>
-        </div>
-      </div>
+    <BaseNode
+      id={id}
+      data={data}
+      label="Output"
+      handles={handles}
+      styles={{ height: "auto" }}
+    >
+      <Box sx={columnFlexBoxStyle}>
+        <Box sx={inputBoxStyle}>
+          <label>Output:</label>
+          <Input
+            sx={commonInputStyle}
+            type="text"
+            value={currName}
+            onChange={handleNameChange}
+          />
+        </Box>
+        <Box sx={selectStyle}>
+          <label>Type:</label>
+          <Select
+            defaultValue={outputType}
+            onChange={handleTypeChange}
+            sx={{ marginLeft: "1rem" }}
+          >
+            <Option value="Text">Text</Option>
+            <Option value="File">File</Option>
+          </Select>
+        </Box>
+      </Box>
     </BaseNode>
   );
 };

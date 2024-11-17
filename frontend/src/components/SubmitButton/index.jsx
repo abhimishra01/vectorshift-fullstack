@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { shallow } from "zustand/shallow";
-import Button from "@mui/joy/Button";
+import { Box, Button } from "@mui/joy";
 
 import { useStore } from "@store";
 import { generatePipelinePayload } from "@utils";
@@ -45,8 +45,8 @@ const SubmitButton = () => {
   }, [pipelineData]);
 
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -62,7 +62,7 @@ const SubmitButton = () => {
       >
         Submit
       </Button>
-    </div>
+    </Box>
   );
 };
 
